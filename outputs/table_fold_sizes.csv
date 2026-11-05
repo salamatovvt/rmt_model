@@ -1,0 +1,5 @@
+fold,holdout_year,train_station_days,test_station_days
+1,2020,14771,15117
+2,2021,29888,15029
+3,2022,44917,15079
+4,2023,59996,15052

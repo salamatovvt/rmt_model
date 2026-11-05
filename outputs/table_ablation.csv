@@ -1,0 +1,6 @@
+variant,n_features,heat_rmse,heat_rmse_sd,nonheat_rmse,nonheat_rmse_sd,exc_recall
+Full model,28,31.872,2.915,3.946,0.294,0.96
+No lag features,20,32.247,3.087,3.908,0.299,0.962
+No satellite features,26,31.957,3.012,3.933,0.272,0.96
+No calendar / heating features,24,33.027,2.625,4.18,0.39,0.952
+No spatial features (incl. NDVI),20,33.753,3.411,4.192,0.298,0.957

@@ -1,0 +1,17 @@
+season,model,n,base_rate,precision,recall,f1
+Early heating,xgb,10226,0.85,0.917,0.953,0.935
+Early heating,lstm,10226,0.85,0.888,0.919,0.903
+Early heating,persistence,10226,0.85,0.909,0.894,0.902
+Early heating,climatology,10226,0.85,0.85,1.0,0.919
+Deep winter,xgb,12412,0.995,0.995,1.0,0.997
+Deep winter,lstm,12412,0.995,0.995,1.0,0.997
+Deep winter,persistence,12412,0.995,0.995,0.994,0.995
+Deep winter,climatology,12412,0.995,0.995,1.0,0.997
+Late heating,xgb,7574,0.888,0.937,0.971,0.953
+Late heating,lstm,7574,0.888,0.907,0.948,0.927
+Late heating,persistence,7574,0.888,0.925,0.932,0.928
+Late heating,climatology,7574,0.888,0.888,1.0,0.94
+Non-heating,xgb,30065,0.022,0.59,0.2,0.298
+Non-heating,lstm,30065,0.022,0.11,0.037,0.055
+Non-heating,persistence,30065,0.022,0.206,0.237,0.22
+Non-heating,climatology,30065,0.022,0.141,0.018,0.032

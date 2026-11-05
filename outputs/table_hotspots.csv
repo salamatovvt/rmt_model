@@ -1,0 +1,5 @@
+season,mean_pm25,sd_pm25,morans_I,morans_p,gi_cells,gi_cells_99,stable_share
+Early heating,58.709,6.662,0.847,0.005,874,653,0.944
+Deep winter,116.836,14.579,0.925,0.005,786,381,0.908
+Late heating,57.442,6.767,0.889,0.005,708,549,0.946
+Non-heating,18.223,3.134,0.949,0.005,946,710,0.988

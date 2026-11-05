@@ -1,0 +1,9 @@
+criterion,factor,spearman_rho,top20_overlap
+persistence,0.8,0.9996,20
+persistence,1.2,0.9998,20
+population,0.8,0.9985,17
+population,1.2,0.9989,20
+ndvi_deficit,0.8,0.9991,20
+ndvi_deficit,1.2,0.9994,19
+land_available,0.8,0.9996,19
+land_available,1.2,0.9996,18

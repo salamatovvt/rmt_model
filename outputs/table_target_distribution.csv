@@ -1,0 +1,5 @@
+season,n,mean,median,p95,share_above_mpc
+Early heating,12789,59.337,51.523,118.0,0.857
+Deep winter,15210,125.845,104.683,260.522,0.995
+Late heating,9459,59.046,52.987,108.917,0.889
+Non-heating,37590,18.549,17.485,30.372,0.023

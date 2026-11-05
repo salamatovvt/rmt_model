@@ -1,0 +1,718 @@
+{
+  "data": {
+    "station_days": 75048,
+    "points": 43,
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "grid_cells": 2716,
+    "note": "SIMULATED dataset tuned to published Almaty statistics",
+    "raw_station_days": 78518,
+    "removed_completeness": 3169,
+    "removed_lag_warmup": 301,
+    "fold_sizes": [
+      {
+        "fold": 1,
+        "holdout_year": 2020,
+        "train_station_days": 14771,
+        "test_station_days": 15117
+      },
+      {
+        "fold": 2,
+        "holdout_year": 2021,
+        "train_station_days": 29888,
+        "test_station_days": 15029
+      },
+      {
+        "fold": 3,
+        "holdout_year": 2022,
+        "train_station_days": 44917,
+        "test_station_days": 15079
+      },
+      {
+        "fold": 4,
+        "holdout_year": 2023,
+        "train_station_days": 59996,
+        "test_station_days": 15052
+      }
+    ],
+    "satellite_missing_share": {
+      "no2_col": {
+        "early_heating": 0.5477363359136758,
+        "deep_winter": 0.546482577251808,
+        "late_heating": 0.5610529654297495,
+        "non_heating": 0.1985102420856611
+      },
+      "aod": {
+        "early_heating": 0.5477363359136758,
+        "deep_winter": 0.546482577251808,
+        "late_heating": 0.5610529654297495,
+        "non_heating": 0.1985102420856611
+      }
+    },
+    "n_sensor_calibrations": 152,
+    "calib_slope_range": [
+      0.159,
+      0.999
+    ]
+  },
+  "stage1": {
+    "winter_rmse_gain_vs_climatology": 0.415,
+    "xgb_vs_persistence_winter": 0.388,
+    "exceedance_recall": 0.96,
+    "exceedance_precision": 0.953,
+    "lstm_minus_xgb_winter_rmse": 18.66,
+    "xgb_time_s": 14.8,
+    "lstm_time_s": 57.0,
+    "table": {
+      "heat_rmse": {
+        "XGBoost": 31.872,
+        "LSTM": 50.53,
+        "Persistence": 52.114,
+        "Climatology": 54.44,
+        "XGBoost, LOSO": 46.547
+      },
+      "heat_mae": {
+        "XGBoost": 18.614,
+        "LSTM": 29.528,
+        "Persistence": 31.199,
+        "Climatology": 35.841,
+        "XGBoost, LOSO": 29.956
+      },
+      "heat_r2": {
+        "XGBoost": 0.708,
+        "LSTM": 0.267,
+        "Persistence": 0.213,
+        "Climatology": 0.14,
+        "XGBoost, LOSO": 0.569
+      },
+      "nonheat_rmse": {
+        "XGBoost": 3.946,
+        "LSTM": 5.743,
+        "Persistence": 6.244,
+        "Climatology": 6.082,
+        "XGBoost, LOSO": 6.419
+      },
+      "nonheat_r2": {
+        "XGBoost": 0.627,
+        "LSTM": 0.214,
+        "Persistence": 0.066,
+        "Climatology": 0.114,
+        "XGBoost, LOSO": 0.451
+      },
+      "exc_f1": {
+        "XGBoost": 0.956,
+        "LSTM": 0.936,
+        "Persistence": 0.931,
+        "Climatology": 0.946,
+        "XGBoost, LOSO": 0.872
+      },
+      "exc_precision": {
+        "XGBoost": 0.953,
+        "LSTM": 0.933,
+        "Persistence": 0.931,
+        "Climatology": 0.917,
+        "XGBoost, LOSO": 0.817
+      },
+      "exc_recall": {
+        "XGBoost": 0.96,
+        "LSTM": 0.94,
+        "Persistence": 0.931,
+        "Climatology": 0.977,
+        "XGBoost, LOSO": 0.937
+      },
+      "fold_sd_heat_rmse": {
+        "XGBoost": 2.915,
+        "LSTM": 4.852,
+        "Persistence": 3.245,
+        "Climatology": 8.205,
+        "XGBoost, LOSO": NaN
+      }
+    },
+    "lstm_epochs_run": [
+      14,
+      7,
+      6,
+      7
+    ],
+    "pooled": {
+      "xgb": {
+        "heat_rmse": 31.97,
+        "heat_mae": 18.613,
+        "heat_r2": 0.711,
+        "heat_rmse_lo": 28.253,
+        "heat_rmse_hi": 35.297,
+        "nonheat_rmse": 3.955,
+        "nonheat_mae": 2.727,
+        "nonheat_r2": 0.633,
+        "nonheat_rmse_lo": 3.612,
+        "nonheat_rmse_hi": 4.269,
+        "exc_precision": 0.953,
+        "exc_recall": 0.96,
+        "exc_f1": 0.956,
+        "exc_f1_lo": 0.947,
+        "exc_f1_hi": 0.964,
+        "fold_sd_heat_rmse": 2.915,
+        "fold_sd_nonheat_rmse": 0.294
+      },
+      "lstm": {
+        "heat_rmse": 50.703,
+        "heat_mae": 29.527,
+        "heat_r2": 0.273,
+        "heat_rmse_lo": 44.128,
+        "heat_rmse_hi": 56.242,
+        "nonheat_rmse": 5.762,
+        "nonheat_mae": 3.892,
+        "nonheat_r2": 0.222,
+        "nonheat_rmse_lo": 5.149,
+        "nonheat_rmse_hi": 6.359,
+        "exc_precision": 0.933,
+        "exc_recall": 0.94,
+        "exc_f1": 0.936,
+        "exc_f1_lo": 0.92,
+        "exc_f1_hi": 0.95,
+        "fold_sd_heat_rmse": 4.852,
+        "fold_sd_nonheat_rmse": 0.542
+      },
+      "persistence": {
+        "heat_rmse": 52.192,
+        "heat_mae": 31.199,
+        "heat_r2": 0.23,
+        "heat_rmse_lo": 45.923,
+        "heat_rmse_hi": 57.814,
+        "nonheat_rmse": 6.255,
+        "nonheat_mae": 4.346,
+        "nonheat_r2": 0.083,
+        "nonheat_rmse_lo": 5.708,
+        "nonheat_rmse_hi": 6.805,
+        "exc_precision": 0.931,
+        "exc_recall": 0.931,
+        "exc_f1": 0.931,
+        "exc_f1_lo": 0.916,
+        "exc_f1_hi": 0.943,
+        "fold_sd_heat_rmse": 3.245,
+        "fold_sd_nonheat_rmse": 0.43
+      },
+      "climatology": {
+        "heat_rmse": 54.914,
+        "heat_mae": 35.848,
+        "heat_r2": 0.148,
+        "heat_rmse_lo": 48.414,
+        "heat_rmse_hi": 60.8,
+        "nonheat_rmse": 6.097,
+        "nonheat_mae": 4.489,
+        "nonheat_r2": 0.129,
+        "nonheat_rmse_lo": 5.587,
+        "nonheat_rmse_hi": 6.606,
+        "exc_precision": 0.917,
+        "exc_recall": 0.977,
+        "exc_f1": 0.946,
+        "exc_f1_lo": 0.933,
+        "exc_f1_hi": 0.956,
+        "fold_sd_heat_rmse": 8.205,
+        "fold_sd_nonheat_rmse": 0.484
+      }
+    },
+    "dm_tests": [
+      {
+        "season": "heat",
+        "baseline": "lstm",
+        "n_days": 733,
+        "delta_rmse": 18.73281,
+        "delta_lo": 15.48682,
+        "delta_hi": 21.56728,
+        "dm_stat": 6.97186,
+        "p_value": 0.0,
+        "p_holm": 0.0
+      },
+      {
+        "season": "heat",
+        "baseline": "persistence",
+        "n_days": 733,
+        "delta_rmse": 20.22228,
+        "delta_lo": 17.29191,
+        "delta_hi": 23.13344,
+        "dm_stat": 7.86017,
+        "p_value": 0.0,
+        "p_holm": 0.0
+      },
+      {
+        "season": "heat",
+        "baseline": "climatology",
+        "n_days": 733,
+        "delta_rmse": 22.94448,
+        "delta_lo": 18.80914,
+        "delta_hi": 26.41323,
+        "dm_stat": 7.2622,
+        "p_value": 0.0,
+        "p_holm": 0.0
+      },
+      {
+        "season": "nonheat",
+        "baseline": "lstm",
+        "n_days": 728,
+        "delta_rmse": 1.80771,
+        "delta_lo": 1.49581,
+        "delta_hi": 2.12178,
+        "dm_stat": 7.43558,
+        "p_value": 0.0,
+        "p_holm": 0.0
+      },
+      {
+        "season": "nonheat",
+        "baseline": "persistence",
+        "n_days": 728,
+        "delta_rmse": 2.30039,
+        "delta_lo": 2.04167,
+        "delta_hi": 2.58022,
+        "dm_stat": 10.15347,
+        "p_value": 0.0,
+        "p_holm": 0.0
+      },
+      {
+        "season": "nonheat",
+        "baseline": "climatology",
+        "n_days": 728,
+        "delta_rmse": 2.14218,
+        "delta_lo": 1.93477,
+        "delta_hi": 2.36697,
+        "dm_stat": 11.63073,
+        "p_value": 0.0,
+        "p_holm": 0.0
+      }
+    ],
+    "worst_1pct": {
+      "n": 603,
+      "threshold_ugm3": 97.03552434643679,
+      "share_heating": 1.0,
+      "share_deep_winter": 0.9087893864013267,
+      "share_inversion_day": 0.9618573797678275,
+      "share_onset_day": 0.32338308457711445,
+      "share_underprediction": 0.8524046434494196,
+      "share_sensor": 0.7346600331674958,
+      "share_sensor_all": 0.8836040280704083,
+      "share_inversion_all_heating": 0.3634979478352972
+    },
+    "ablation": [
+      {
+        "variant": "Full model",
+        "n_features": 28,
+        "heat_rmse": 31.872,
+        "heat_rmse_sd": 2.915,
+        "nonheat_rmse": 3.946,
+        "nonheat_rmse_sd": 0.294,
+        "exc_recall": 0.96
+      },
+      {
+        "variant": "No lag features",
+        "n_features": 20,
+        "heat_rmse": 32.247,
+        "heat_rmse_sd": 3.087,
+        "nonheat_rmse": 3.908,
+        "nonheat_rmse_sd": 0.299,
+        "exc_recall": 0.962
+      },
+      {
+        "variant": "No satellite features",
+        "n_features": 26,
+        "heat_rmse": 31.957,
+        "heat_rmse_sd": 3.012,
+        "nonheat_rmse": 3.933,
+        "nonheat_rmse_sd": 0.272,
+        "exc_recall": 0.96
+      },
+      {
+        "variant": "No calendar / heating features",
+        "n_features": 24,
+        "heat_rmse": 33.027,
+        "heat_rmse_sd": 2.625,
+        "nonheat_rmse": 4.18,
+        "nonheat_rmse_sd": 0.39,
+        "exc_recall": 0.952
+      },
+      {
+        "variant": "No spatial features (incl. NDVI)",
+        "n_features": 20,
+        "heat_rmse": 33.753,
+        "heat_rmse_sd": 3.411,
+        "nonheat_rmse": 4.192,
+        "nonheat_rmse_sd": 0.298,
+        "exc_recall": 0.957
+      }
+    ],
+    "loso_by_station": [
+      {
+        "station": "REF1",
+        "heat_rmse": 62.564,
+        "heat_mae": 35.944,
+        "heat_r2": 0.574,
+        "nonheat_rmse": 6.206,
+        "nonheat_mae": 4.611,
+        "nonheat_r2": 0.474,
+        "exc_precision": 0.767,
+        "exc_recall": 0.952,
+        "exc_f1": 0.85,
+        "dist_chp_min": 9.58,
+        "elevation": 939.539,
+        "district": "Almaly"
+      },
+      {
+        "station": "REF2",
+        "heat_rmse": 46.668,
+        "heat_mae": 30.555,
+        "heat_r2": 0.572,
+        "nonheat_rmse": 7.137,
+        "nonheat_mae": 5.09,
+        "nonheat_r2": 0.461,
+        "exc_precision": 0.844,
+        "exc_recall": 0.922,
+        "exc_f1": 0.881,
+        "dist_chp_min": 5.295,
+        "elevation": 804.248,
+        "district": "Alatau"
+      },
+      {
+        "station": "REF3",
+        "heat_rmse": 50.299,
+        "heat_mae": 32.194,
+        "heat_r2": 0.56,
+        "nonheat_rmse": 8.324,
+        "nonheat_mae": 6.042,
+        "nonheat_r2": 0.413,
+        "exc_precision": 0.867,
+        "exc_recall": 0.888,
+        "exc_f1": 0.877,
+        "dist_chp_min": 6.831,
+        "elevation": 649.527,
+        "district": "Turksib"
+      },
+      {
+        "station": "REF4",
+        "heat_rmse": 33.689,
+        "heat_mae": 23.346,
+        "heat_r2": 0.613,
+        "nonheat_rmse": 4.648,
+        "nonheat_mae": 3.308,
+        "nonheat_r2": 0.458,
+        "exc_precision": 0.766,
+        "exc_recall": 0.975,
+        "exc_f1": 0.858,
+        "dist_chp_min": 11.429,
+        "elevation": 1081.118,
+        "district": "Bostandyk"
+      },
+      {
+        "station": "REF5",
+        "heat_rmse": 39.518,
+        "heat_mae": 27.74,
+        "heat_r2": 0.525,
+        "nonheat_rmse": 5.78,
+        "nonheat_mae": 4.231,
+        "nonheat_r2": 0.448,
+        "exc_precision": 0.84,
+        "exc_recall": 0.951,
+        "exc_f1": 0.892,
+        "dist_chp_min": 12.774,
+        "elevation": 987.84,
+        "district": "Auezov"
+      }
+    ]
+  },
+  "stage2": {
+    "table": {
+      "mean_pm25": {
+        "Early heating": 58.709,
+        "Deep winter": 116.836,
+        "Late heating": 57.442,
+        "Non-heating": 18.223
+      },
+      "sd_pm25": {
+        "Early heating": 6.662,
+        "Deep winter": 14.579,
+        "Late heating": 6.767,
+        "Non-heating": 3.134
+      },
+      "morans_I": {
+        "Early heating": 0.847,
+        "Deep winter": 0.925,
+        "Late heating": 0.889,
+        "Non-heating": 0.949
+      },
+      "morans_p": {
+        "Early heating": 0.005,
+        "Deep winter": 0.005,
+        "Late heating": 0.005,
+        "Non-heating": 0.005
+      },
+      "gi_cells": {
+        "Early heating": 874,
+        "Deep winter": 786,
+        "Late heating": 708,
+        "Non-heating": 946
+      },
+      "gi_cells_99": {
+        "Early heating": 653,
+        "Deep winter": 381,
+        "Late heating": 549,
+        "Non-heating": 710
+      },
+      "stable_share": {
+        "Early heating": 0.944,
+        "Deep winter": 0.908,
+        "Late heating": 0.946,
+        "Non-heating": 0.988
+      }
+    },
+    "persistent_cells": 874,
+    "winter_only_cells": 275,
+    "ndvi_plus0.3_effect_ugm3": {
+      "Early heating / Low built-up": -7.69,
+      "Early heating / Dense built-up": -7.17,
+      "Deep winter / Low built-up": -7.37,
+      "Deep winter / Dense built-up": -1.05,
+      "Late heating / Low built-up": -6.33,
+      "Late heating / Dense built-up": -4.48,
+      "Non-heating / Low built-up": -1.27,
+      "Non-heating / Dense built-up": -1.33
+    },
+    "top_shap_features_surface": {
+      "blh": 0.296999990940094,
+      "heating": 0.20499999821186066,
+      "doy_cos": 0.1315000057220459,
+      "doy_sin": 0.08420000225305557,
+      "dist_chp2": 0.06360000371932983,
+      "elevation": 0.0608999989926815
+    },
+    "class_99": {
+      "persistent": 672,
+      "winter_only": 219
+    },
+    "ndvi_effect": [
+      {
+        "season": "Early heating",
+        "built_up": "Low built-up",
+        "true_effect_pct": -7.794,
+        "n_cells": 1358,
+        "ndvi_p05": 0.086,
+        "ndvi_p95": 0.349,
+        "mean_pred": 63.0890007019043,
+        "effect_ugm3": -7.687,
+        "effect_lo": -8.084,
+        "effect_hi": -7.362,
+        "effect_pct": -12.185,
+        "pct_lo": -12.81,
+        "pct_hi": -11.657
+      },
+      {
+        "season": "Early heating",
+        "built_up": "Dense built-up",
+        "true_effect_pct": -6.184,
+        "n_cells": 1358,
+        "ndvi_p05": 0.052,
+        "ndvi_p95": 0.326,
+        "mean_pred": 61.68199920654297,
+        "effect_ugm3": -7.175,
+        "effect_lo": -7.524,
+        "effect_hi": -6.811,
+        "effect_pct": -11.632,
+        "pct_lo": -12.217,
+        "pct_hi": -11.023
+      },
+      {
+        "season": "Deep winter",
+        "built_up": "Low built-up",
+        "true_effect_pct": -7.623,
+        "n_cells": 1358,
+        "ndvi_p05": 0.049,
+        "ndvi_p95": 0.199,
+        "mean_pred": 104.6969985961914,
+        "effect_ugm3": -7.366,
+        "effect_lo": -8.662,
+        "effect_hi": -5.787,
+        "effect_pct": -7.035,
+        "pct_lo": -8.291,
+        "pct_hi": -5.524
+      },
+      {
+        "season": "Deep winter",
+        "built_up": "Dense built-up",
+        "true_effect_pct": -6.074,
+        "n_cells": 1358,
+        "ndvi_p05": 0.03,
+        "ndvi_p95": 0.187,
+        "mean_pred": 110.2969970703125,
+        "effect_ugm3": -1.053,
+        "effect_lo": -2.683,
+        "effect_hi": 0.201,
+        "effect_pct": -0.955,
+        "pct_lo": -2.437,
+        "pct_hi": 0.182
+      },
+      {
+        "season": "Late heating",
+        "built_up": "Low built-up",
+        "true_effect_pct": -7.707,
+        "n_cells": 1358,
+        "ndvi_p05": 0.068,
+        "ndvi_p95": 0.274,
+        "mean_pred": 58.058998107910156,
+        "effect_ugm3": -6.335,
+        "effect_lo": -6.782,
+        "effect_hi": -5.84,
+        "effect_pct": -10.911,
+        "pct_lo": -11.686,
+        "pct_hi": -10.042
+      },
+      {
+        "season": "Late heating",
+        "built_up": "Dense built-up",
+        "true_effect_pct": -6.128,
+        "n_cells": 1358,
+        "ndvi_p05": 0.041,
+        "ndvi_p95": 0.257,
+        "mean_pred": 56.83100128173828,
+        "effect_ugm3": -4.484,
+        "effect_lo": -5.014,
+        "effect_hi": -3.983,
+        "effect_pct": -7.891,
+        "pct_lo": -8.835,
+        "pct_hi": -7.012
+      },
+      {
+        "season": "Non-heating",
+        "built_up": "Low built-up",
+        "true_effect_pct": -25.925,
+        "n_cells": 1358,
+        "ndvi_p05": 0.123,
+        "ndvi_p95": 0.498,
+        "mean_pred": 18.638999938964844,
+        "effect_ugm3": -1.273,
+        "effect_lo": -1.341,
+        "effect_hi": -1.216,
+        "effect_pct": -6.831,
+        "pct_lo": -7.165,
+        "pct_hi": -6.541
+      },
+      {
+        "season": "Non-heating",
+        "built_up": "Dense built-up",
+        "true_effect_pct": -20.2,
+        "n_cells": 1358,
+        "ndvi_p05": 0.074,
+        "ndvi_p95": 0.466,
+        "mean_pred": 18.399999618530273,
+        "effect_ugm3": -1.327,
+        "effect_lo": -1.387,
+        "effect_hi": -1.273,
+        "effect_pct": -7.212,
+        "pct_lo": -7.525,
+        "pct_hi": -6.926
+      }
+    ],
+    "h1_contrast": [
+      {
+        "season": "Early heating",
+        "built_up": "Low built-up",
+        "diff_pct_points": -5.3542,
+        "lo": -6.0309,
+        "hi": -4.7097,
+        "p_boot_two_sided": 0.0
+      },
+      {
+        "season": "Early heating",
+        "built_up": "Dense built-up",
+        "diff_pct_points": -4.4197,
+        "lo": -5.0182,
+        "hi": -3.7363,
+        "p_boot_two_sided": 0.0
+      },
+      {
+        "season": "Deep winter",
+        "built_up": "Low built-up",
+        "diff_pct_points": -0.2047,
+        "lo": -1.532,
+        "hi": 1.3152,
+        "p_boot_two_sided": 0.88
+      },
+      {
+        "season": "Deep winter",
+        "built_up": "Dense built-up",
+        "diff_pct_points": 6.2575,
+        "lo": 4.7579,
+        "hi": 7.4198,
+        "p_boot_two_sided": 0.0
+      },
+      {
+        "season": "Late heating",
+        "built_up": "Low built-up",
+        "diff_pct_points": -4.0805,
+        "lo": -4.9099,
+        "hi": -3.1457,
+        "p_boot_two_sided": 0.0
+      },
+      {
+        "season": "Late heating",
+        "built_up": "Dense built-up",
+        "diff_pct_points": -0.6784,
+        "lo": -1.6777,
+        "hi": 0.2625,
+        "p_boot_two_sided": 0.18
+      }
+    ],
+    "ndvi_vs_doycos_corr_heating": -0.09,
+    "n_boot_stability": 100
+  },
+  "stage3": {
+    "ahp_weights": {
+      "persistence": 0.472,
+      "population": 0.256,
+      "ndvi_deficit": 0.164,
+      "land_available": 0.108
+    },
+    "consistency_ratio": 0.017,
+    "top100_by_district": {
+      "Alatau": 67,
+      "Turksib": 29,
+      "Zhetysu": 4
+    },
+    "top3_districts_share": 100,
+    "spearman_median": 0.999,
+    "spearman_min": 0.997,
+    "top20_overlap_min": 17,
+    "lambda_max": 4.0458,
+    "n_excluded_cells": 28,
+    "top100_classes": {
+      "persistent": 100
+    },
+    "criteria_spearman": {
+      "persistence": {
+        "persistence": 1.0,
+        "population": -0.002,
+        "ndvi_deficit": 0.353,
+        "land_available": 0.463
+      },
+      "population": {
+        "persistence": -0.002,
+        "population": 1.0,
+        "ndvi_deficit": 0.104,
+        "land_available": -0.531
+      },
+      "ndvi_deficit": {
+        "persistence": 0.353,
+        "population": 0.104,
+        "ndvi_deficit": 1.0,
+        "land_available": 0.099
+      },
+      "land_available": {
+        "persistence": 0.463,
+        "population": -0.531,
+        "ndvi_deficit": 0.099,
+        "land_available": 1.0
+      }
+    }
+  }
+}

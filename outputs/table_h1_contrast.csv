@@ -1,0 +1,7 @@
+season,built_up,diff_pct_points,lo,hi,p_boot_two_sided
+Early heating,Low built-up,-5.3542,-6.0309,-4.7097,0.0
+Early heating,Dense built-up,-4.4197,-5.0182,-3.7363,0.0
+Deep winter,Low built-up,-0.2047,-1.532,1.3152,0.88
+Deep winter,Dense built-up,6.2575,4.7579,7.4198,0.0
+Late heating,Low built-up,-4.0805,-4.9099,-3.1457,0.0
+Late heating,Dense built-up,-0.6784,-1.6777,0.2625,0.18
